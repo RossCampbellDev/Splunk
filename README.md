@@ -48,4 +48,38 @@ we can click on one of the values on the chart legend to add it to the filter in
 ### table
 `| table col1, col2, col3`
 
+## Indexer
+An indexer is an instance that indexes data, transforming raw data into events, and placing the results into an index.  it also searches the indexed data in response to search requests.
+
+## Forwarder
+Splunk Forwarder is the component which you have to use for collecting the logs
+
+## Streaming
+'Operates event by event as it is returned by a search' eg `eval`
+
+### Distributable streaming/centralized streaming
+Distributable: order of events does not matter.  can run on the indexer.  improves processing time eg `regex`
+
+Centralized: order matters.  eg `head`
+
+## Non-Streaming
+'Requires the events from all of the indexers' eg `sort`
+
+### Transforming
+these commands take input events and generate output such as tables, eg `chart`
+transform search result data into visualisations
+
+### Generating
+fetch info from the indexes without transforming it, eg `pivot`
+
+### Orchestrating
+controls some aspect of how the search is processed
+does not directly affect the final result set.  an example might be enabling or disabling a search optimisation that helps the final result be arrived at sooner
+
+### Dataset processing
+require the entire dataset, are not transforming, not distributable, not streaming, not orchestratable, eg `sort, eventsstats`
+
+### Custom commands
+user defined SPL - make your own extensions (can use python scripts)
+
 #IOC #IOI #IR #SOC #dataanalysis #networking #cheatsheet
