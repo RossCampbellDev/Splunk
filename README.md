@@ -32,6 +32,17 @@ we can pipe to the sort command to order by a column, using a hyphen to indicate
 for more advanced filtering than 'where'
 `| regex col1="abc.*"`
 
+### eval-if
+creates a new field in events by using existing field(s)
+calculates an expression and puts the value into a specified new field
+can evaluate mathematical, string, and boolean expressions
+
+`eval<FieldName> = if(x,y,z)`
+where FieldName is the name of the field that will be returned by the expression
+if is the function, xyz are the args
+"if X is true, return Y.  else, return Z" similar to a java ternary operator
+
+
 ## Visualising Data
 click on a selected field to the left of the data window on the events screen
 we can click 'top values by name' or any of the other options to generate a simple report
